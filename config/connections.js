@@ -1,12 +1,13 @@
 require('dotenv').config();
 
-const { connect, connection } = require('mongoose');
+const { connect } = require('mongoose');
 
 connect (
-    process.env/MONGODB_URI || 'mongodb://127.0.0.1:27017/nosql-social-network',
-{
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/nosql-social-network',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
-module.exports = connection;
+module.exports = connect;
