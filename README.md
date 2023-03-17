@@ -35,7 +35,7 @@ Install dependencies
 
 Start the application
 
-```npm ```
+```npm run start ```
 
 ### Technology:
 
