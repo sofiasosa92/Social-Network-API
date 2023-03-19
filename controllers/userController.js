@@ -2,7 +2,7 @@ const { User, Thought } = require('../models');
 
 const userController = {
     // get all users
-    getAllUser(req, res) {
+    getAllUsers(req, res) {
         User.find({})
         .then((dbUserData) => res.json(dbUserData))
         .catch((err) => {
@@ -14,7 +14,7 @@ const userController = {
 
     // get one user by id
     getUserById(req, res) {
-        User.findOne({ _id: params.id })
+        User.findOne({ _id: req.params.id })
         .select ('-__v')
         .then((dbUserData) => {
             if (!dbUserData) {

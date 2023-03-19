@@ -1,20 +1,38 @@
+// const express = require('express');
+// const db = require('./config/connections');
+// const api = require('./routes');
+
+// require('dotenv').config();
+
+// const app= express();
+// const cwd = process.cwd();
+
+// const port = process.env.PORT || 3001;
+// const dbConnectionString = process.env.DB_CONNECTION_STRING;
+
+// // Middleware
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// app.use(api);
+
+
+// db.once('open', () => {
+//   app.listen(PORT, () => {
+//     console.log(`API server running on port ${PORT}!`);
+//   });
+// });
+
 const express = require('express');
 const db = require('./config/connections');
-const routes = require('./routes');
+const routes = require('./routes/index'); 
 
-require('dotenv').config();
+const PORT = process.env.PORT || 3001;
+const app = express();
 
-
-const cwd = process.cwd();
-
-const port = process.env.PORT || 3001;
-const dbConnectionString = process.env.DB_CONNECTION_STRING;
-
-// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+console.log(routes);
 app.use(routes);
-
 
 db.once('open', () => {
   app.listen(PORT, () => {
