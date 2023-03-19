@@ -14,7 +14,8 @@ Challenge 18
 * [Questions?](#Questions)
 
 ### Description:
-For challenge 18 i created a 
+For challenge 18 i created a API for my social network that uses a NoSQL database
+SO THAT my website can handle large amounts of unstructured data.
 
 <!-- This project uses the Node.js and Express web framework. -->
 
@@ -35,7 +36,7 @@ Install dependencies
 
 Start the application
 
-```npm ```
+```npm run start ```
 
 ### Technology:
 
